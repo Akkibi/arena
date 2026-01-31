@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import Arena from './components/Arena.vue'
 </script>
 
 <template>
-  <HelloWorld msg="FIGHT ARENA" />
+  <Arena msg="FIGHT ARENA" />
 </template>
 
 <style scoped>
