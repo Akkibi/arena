@@ -335,7 +335,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <h1>{{ msg }}</h1>
+  <h1 class="title">{{ msg }}</h1>
 
   <!-- Fighter Selection Screen -->
   <div v-if="!gameStarted" class="selection-screen">
@@ -745,8 +745,7 @@ h1 {
 .reset-button {
   position: fixed;
   top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 10px;
   padding: 10px 20px;
   font-size: 1rem;
   font-weight: bold;
@@ -790,4 +789,67 @@ h1 {
   flex-direction: column;
   align-items: center;
 }
+
+@media (max-width: 768px) {
+  .end-game {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .end-game .restart-button {
+    margin-top: 10px;
+    padding: 10px 30px;
+    font-size: 1rem;
+  }
+
+  .end-game .restart-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(245, 87, 108, 0.4);
+  }
+
+  .end-game .restart-button {
+    margin-top: 10px;
+    padding: 10px 30px;
+    font-size: 1rem;
+  }
+
+  .end-game .restart-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(245, 87, 108, 0.4);
+  }
+
+  .fighter-option {
+    margin-top: 10px;
+    padding: 10px 30px;
+    font-size: 1rem;
+    flex-direction: column;
+  }
+
+  .selection-screen {
+    padding-top: 20px;
+    overflow-y:scroll;
+  }
+
+  .bottom-right{
+      left: 10px;
+      right:unset;
+      bottom: 2rem;
+  }
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+@media (max-width: 480px) {
+  .end-game {
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+
 </style>
