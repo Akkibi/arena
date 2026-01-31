@@ -81,16 +81,16 @@ function startGame() {
 
   fighter1.value = createFighter(
     selectedFighter1Type.value,
-    centerX.value - 300,
-    centerY.value - 300,
+    centerX.value - 200,
+    centerY.value - 200,
     option1.name + ' 1',
     option1.color
   )
 
   fighter2.value = createFighter(
     selectedFighter2Type.value,
-    centerX.value + 300,
-    centerY.value + 300,
+    centerX.value + 200,
+    centerY.value + 200,
     option2.name + ' 2',
     option2.color
   )
@@ -290,10 +290,10 @@ function updatePhysics() {
     const dotProduct = dvx * nx + dvy * ny
 
     // Apply collision response
-    fighter1.value.vx += nx * dotProduct * BALL_COLLISION_DAMPING * 3 * Math.random()
-    fighter1.value.vy += ny * dotProduct * BALL_COLLISION_DAMPING * 3 * Math.random()
-    fighter2.value.vx -= nx * dotProduct * BALL_COLLISION_DAMPING * 3 * Math.random()
-    fighter2.value.vy -= ny * dotProduct * BALL_COLLISION_DAMPING * 3 * Math.random()
+    fighter1.value.vx += nx * dotProduct * BALL_COLLISION_DAMPING * 2 * Math.random()
+    fighter1.value.vy += ny * dotProduct * BALL_COLLISION_DAMPING * 2 * Math.random()
+    fighter2.value.vx -= nx * dotProduct * BALL_COLLISION_DAMPING * 2 * Math.random()
+    fighter2.value.vy -= ny * dotProduct * BALL_COLLISION_DAMPING * 2 * Math.random()
   } else if (squareHit || bulletHit) {
     ballsInCollision = true
   } else {
@@ -538,7 +538,8 @@ onUnmounted(() => {
 
 .end-game-text {
   color: white;
-  font-size: 5rem;
+  font-size: 3rem;
+  line-height: 100%;
   font-weight: bold;
   text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
 }
@@ -761,7 +762,7 @@ h1 {
 
 .reset-button:hover {
   background: rgba(0, 0, 0, 0.7);
-  transform: translateX(-50%) translateY(-2px);
+  transform: translateY(-2px);
 }
 
 /* Restart Button */
@@ -794,17 +795,6 @@ h1 {
   .end-game {
     width: 90%;
     margin: 0 auto;
-  }
-
-  .end-game .restart-button {
-    margin-top: 10px;
-    padding: 10px 30px;
-    font-size: 1rem;
-  }
-
-  .end-game .restart-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(245, 87, 108, 0.4);
   }
 
   .end-game .restart-button {
